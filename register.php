@@ -1,19 +1,11 @@
-<?php
-include("config.php"); 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    $sql = "INSERT INTO users (email, username, password) VALUES ('$email','$username', '$password')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "Registration successful!";
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
-
-    mysqli_close($conn);
-}
-?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+</head>
+<body>
+    <h1>Registration Page</h1>
+    <a href="employee_register.php">Register as Employee</a>
+    <a href="admin_register.php">Register as Admin</a>
+</body>
+</html>
